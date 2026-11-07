@@ -2,6 +2,12 @@
 
 > 烽火戲諸侯原著小說・全 85 章起承轉合深度解析・終極旗艦版
 
+🌐 **線上閱讀網址（GitHub Pages）**：  
+👉 [https://fullmodel-star.github.io/jianlai-novel-guide/](https://fullmodel-star.github.io/jianlai-novel-guide/)
+
+📁 **GitHub 原始碼庫**：  
+👉 [https://github.com/fullmodel-star/jianlai-novel-guide](https://github.com/fullmodel-star/jianlai-novel-guide)
+
 本專案接續《劍來》動畫第二季結束後之全小說主線劇情，整理至小說正文第十五卷大結局、三教祖師散道，以及官方最新番外篇章（含《新婚》、《隱官見隱官》、《少年遊》至《上升地》）。
 
 ---
