@@ -702,6 +702,9 @@
       <button class="btn" onclick="changeFontSize(1)">🔠 放大</button>
       <button class="btn" onclick="changeFontSize(-1)">🔡 縮小</button>
       <button class="btn" onclick="resetFontSize()">🔄 重置</button>
+      <a href="#reader-guide" class="btn btn-gold" style="font-weight:bold;">📖 讀者必讀導讀</a>
+      <button class="btn" style="border-color:var(--gold); color:var(--gold); font-weight:bold;" onclick="openModal('modal-finale')">🏆 終極大結局速覽</button>
+      <a href="#guide-anime-bridge" class="btn">📺 動畫第二季銜接</a>
       <button class="btn btn-gold" onclick="resumeReading()">📌 繼續上次閱讀</button>
       <button class="btn" onclick="openModal('modal-fate')">👥 命運表彈窗</button>
       <button class="btn" onclick="openModal('modal-battles')">⚔️ 戰鬥表彈窗</button>
@@ -740,6 +743,20 @@
         <span class="pill" onclick="quickFilter('正陽山')">正陽山</span>
         <span class="pill" onclick="quickFilter('番外')">番外篇</span>
         <span class="pill" onclick="quickFilter('')">全部顯示</span>
+      </div>
+    </div>
+
+    <div style="background:var(--bg-block); border:1px solid var(--border-accent); border-radius:8px; padding:12px; margin-bottom:14px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+      <div style="font-size:12px; color:var(--gold); font-weight:bold; margin-bottom:8px; display:flex; align-items:center; justify-content:space-between;">
+        <span>⭐ 讀者全景導航（先看懂再讀）</span>
+        <span style="font-size:10px; background:var(--gold); color:#000; padding:1px 5px; border-radius:3px; font-weight:bold;">必看</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:6px; font-size:13px;">
+        <a href="#reader-guide" class="toc-link" style="color:var(--gold-light); font-weight:bold; padding:4px 6px;">🌟 這部小說在幹啥？（核心主線）</a>
+        <a href="#guide-anime-bridge" class="toc-link" style="color:var(--cheng); padding:4px 6px;">📺 動畫第二季無縫接軌導讀</a>
+        <a href="#guide-grand-finale" class="toc-link" style="color:var(--gold); font-weight:bold; padding:4px 6px;" onclick="openModal('modal-finale')">🏆 終極大結局全景深度揭秘</a>
+        <a href="#guide-who-lives-dies" class="toc-link" style="color:var(--zhuan); padding:4px 6px;">👥 誰生誰死：主要人物最終命運</a>
+        <a href="#timeline" class="toc-link" style="padding:4px 6px;">📜 12大歷史階段時間線</a>
       </div>
     </div>
 
@@ -843,6 +860,269 @@
       <div>
         <span style="color:var(--ink-muted);" id="readingTimeEst">預估全書閱讀時間約 6.5 小時</span>
       </div>
+    
+    <!-- READER ORIENTATION & GRAND FINALE HERO SECTION -->
+    <section class="feature-card reader-orientation" id="reader-guide" style="border: 2px solid var(--gold); background: linear-gradient(135deg, rgba(223, 173, 102, 0.1) 0%, rgba(19, 32, 48, 0.98) 100%); margin-bottom: 30px; box-shadow: 0 8px 32px rgba(0,0,0,0.55); border-radius:12px; padding:24px;">
+      
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 22px;">
+        <div>
+          <span class="outcome-tag" style="background:var(--gold); color:#000; font-weight:bold; font-size:13px; margin-right:8px;">讀者專屬導讀中心</span>
+          <h2 style="display:inline-block; font-size:24px; color:var(--gold-light); margin:5px 0 0 0;">📖 《劍來》到底在講什麼？小說核心主線與終極大結局全景解密</h2>
+        </div>
+        <div style="font-size:13px; color:var(--ink-muted); margin-top:8px;">
+          ⏱️ 5分鐘通曉全書宏觀脈絡與終局・徹底解決「不知道在演啥」的閱讀痛點
+        </div>
+      </div>
+
+      <!-- Quick Navigation Tabs within Reader Guide -->
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;">
+        <a href="#guide-what-is-it" class="btn" style="border-color:var(--qi); color:var(--qi); font-weight:bold;">🌟 1. 這小說在幹啥？（三分鐘懂核心主線）</a>
+        <a href="#guide-anime-bridge" class="btn" style="border-color:var(--cheng); color:var(--cheng); font-weight:bold;">📺 2. 動畫第二季無縫銜接指南</a>
+        <a href="#guide-grand-finale" class="btn" style="border-color:var(--gold); color:var(--gold); font-weight:bold; background:rgba(223,173,102,0.18);">🏆 3. 終極大結局深度解密（兩界勝負與主角歸宿）</a>
+        <a href="#guide-who-lives-dies" class="btn" style="border-color:var(--zhuan); color:var(--zhuan); font-weight:bold;">👥 4. 主要角色最終生死下場</a>
+        <a href="#guide-reading-path" class="btn" style="font-weight:bold;">🗺️ 5. 85章全書雙閱讀路徑</a>
+      </div>
+
+      <!-- Part 1: What is this novel actually about? -->
+      <div id="guide-what-is-it" style="background:var(--bg-card); border-radius:10px; padding:22px; border-left:5px solid var(--qi); margin-bottom:22px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
+          <h3 style="color:var(--qi); margin:0; font-size:20px;">🌟 一、三分鐘看懂《劍來》到底在演什麼？（世界觀與主角核心旅程）</h3>
+          <span style="font-size:13px; color:var(--ink-muted);">宏觀架構・不再迷失</span>
+        </div>
+        
+        <p style="font-size:16px; line-height:1.85; margin-bottom:14px;">
+          如果你是初次接觸《劍來》，或者看完了動畫第二季卻不知道小說後續在演什麼，請抓住<strong>《劍來》全書最核心的一句話：</strong><br/>
+          <span style="display:block; margin-top:8px; padding:12px 16px; background:rgba(223,173,102,0.12); border-left:4px solid var(--gold); border-radius:6px; color:var(--gold-light); font-size:17px; font-weight:bold; line-height:1.7;">
+            「一個泥瓶巷最底層、孤苦無依的燒瓷凡人孤兒陳平安，在神明復甦、弱肉強食、天地即將大亂的修真修仙大爭之世，靠著死守內心規矩與一把把木劍，一步步從螻蟻走出自己的道，為天下凡人爭一口講道理的氣，為心愛之人立起萬里劍鋒，最終打破神人桎梏、促成三教散道的大道史詩。」
+          </span>
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:16px; margin-top:16px;">
+          <div style="background:var(--bg-block); padding:16px; border-radius:8px; border:1px solid var(--border);">
+            <div style="font-weight:bold; color:var(--gold); font-size:15px; margin-bottom:6px;">① 世界的底層衝突：人族 vs 遠古神靈</div>
+            <div style="font-size:14px; color:var(--ink-muted); line-height:1.7;">
+              一萬年前，遠古天庭的神靈統治萬物，人類只是神靈豢養的血食牛馬。後來人族三大領袖（道祖、佛祖、至聖先師）聯手兵家與劍仙發動弒神之戰，打碎神庭，將神靈斬落天外。然而萬年之後，遠古天庭殘留的至高神靈試圖借機重掌乾坤，神人之間的宿命終局之戰貫穿全書暗線。
+            </div>
+          </div>
+          <div style="background:var(--bg-block); padding:16px; border-radius:8px; border:1px solid var(--border);">
+            <div style="font-weight:bold; color:var(--qi); font-size:15px; margin-bottom:6px;">② 兩座天下的生存死戰：浩然 vs 蠻荒</div>
+            <div style="font-size:14px; color:var(--ink-muted); line-height:1.7;">
+              現世被劃分為多座天下。儒家統轄的「浩然天下」注重文治禮樂；而隔壁的「蠻荒天下」信奉純粹弱肉強食、億萬妖族虎視眈眈。兩座天下之間，唯有一道由萬年老劍仙枯守的<strong>「劍氣長城」</strong>抵禦蠻荒入侵。小說中後期的最大危機，就是蠻荒天下全面大舉進攻劍氣長城與浩然天下，人族存亡懸於一線。
+            </div>
+          </div>
+          <div style="background:var(--bg-block); padding:16px; border-radius:8px; border:1px solid var(--border);">
+            <div style="font-weight:bold; color:var(--cheng); font-size:15px; margin-bottom:6px;">③ 主角陳平安的道：修仙也必須「講道理」</div>
+            <div style="font-size:14px; color:var(--ink-muted); line-height:1.7;">
+              修仙界信奉拳頭大就是硬道理、弱者命如草芥。但齊靜春先生臨終點燃了陳平安的道心：<strong>「弱者也要有說理的權利，善惡終當有報；手中的劍是用來守護身後弱小，而不是凌辱他人。」</strong>陳平安從一個沒有長生橋的泥腿子，憑藉一拳一劍走樁練劍，走出了一條天下神仙既敬佩又恐懼的「心安之道」。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part 2: Anime Season 2 Bridge -->
+      <div id="guide-anime-bridge" style="background:var(--bg-card); border-radius:10px; padding:22px; border-left:5px solid var(--cheng); margin-bottom:22px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
+          <h3 style="color:var(--cheng); margin:0; font-size:20px;">📺 二、動畫第二季無縫銜接指南：從動畫結束到小說大結局的主線三步曲</h3>
+          <span style="font-size:13px; color:var(--ink-muted);">動畫黨必讀・無痛銜接</span>
+        </div>
+
+        <p style="font-size:15px; line-height:1.8; margin-bottom:14px;">
+          <strong>動畫第二季停在哪裡？</strong> 動畫第二季結尾，陳平安完成了護送齊靜春遺留學童（李寶瓶等人）到山崖書院的千里旅程，並將劍胚與信件送回落魄山，短暫返回泥瓶巷。如果你是看完動畫想接著了解小說，<strong>第二季之後的全部主線可清晰劃分為以下三大步曲：</strong>
+        </p>
+
+        <div style="position:relative; padding-left:20px; border-left:3px dashed var(--border-accent);">
+          <div style="margin-bottom:18px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="outcome-tag" style="background:var(--gold); color:#000;">第一階段・遠遊問心</span>
+              <strong style="color:var(--gold-light); font-size:16px;">孤身遠遊、長城立約與書簡湖碎丹（第1~7章，細節對應第16~33章）</strong>
+            </div>
+            <p style="font-size:14px; color:var(--ink-muted); margin:6px 0 0 0; line-height:1.7;">
+              陳平安為了與寧姚的「十年之約」，孤身二度遠遊。初上劍氣長城與寧姚在老酒鋪重逢，立誓十年後堂堂正正提劍提酒再來提親；隨後跌入藕花福地斬殺魔宗霸主丁嬰、收養裴錢；在書簡湖面臨童年玩伴顧璨依仗惡蛟濫殺無辜，陳平安陷入道義與親情絕境，選擇替亡者記帳超渡，承受大道因果反噬導致金丹崩碎、一夜白髮；隨後北上北俱蘆洲錘鍊武魄突破第七境「金身境」。
+            </p>
+          </div>
+          <div style="margin-bottom:18px;">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="outcome-tag" style="background:var(--qi); color:#fff;">第二階段・兩界血戰</span>
+              <strong style="color:var(--qi); font-size:16px;">接任末代隱官、長城分天與獨守城頭（第8~11章，細節對應第34~43章）</strong>
+            </div>
+            <p style="font-size:14px; color:var(--ink-muted); margin:6px 0 0 0; line-height:1.7;">
+              十年之期陳平安重返劍氣長城，正逢蠻荒天下百萬大軍全面攻城。原隱官蕭愻叛逃，陳平安臨危受命被推舉為「劍氣長城末代隱官」，統率避暑行宮以極致算力痛擊妖族十四王座；隨後老大劍仙陳清都以身殉道劈開長城兩半，寧姚攜年輕一代劍修開闢「五彩天下」；陳平安則獨自留守殘破城頭三年，歷經千萬次生死殺戮，肉身脫胎換骨突破遠遊與山巔境！
+            </p>
+          </div>
+          <div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="outcome-tag" style="background:var(--zhuan); color:#fff;">第三階段・重塑天下</span>
+              <strong style="color:var(--zhuan); font-size:16px;">寶瓶保衛戰、問劍正陽山、三教散道大結局（第12~15章，細節對應第44~85章）</strong>
+            </div>
+            <p style="font-size:14px; color:var(--ink-muted); margin:6px 0 0 0; line-height:1.7;">
+              浩然戰事爆發，大驪國師崔瀺以身殉道算死蠻荒托月山大祖；陳平安重返浩然，單槍匹馬問劍正陽山踏碎祖師堂斬殺搬山猿，徹底了結百年舊怨；正式建立落魄山宗門與青萍劍宗；最終抵禦周密與遠古神靈登天重構天庭，見證至聖、道祖、佛陀「三教散道」讓位人間，陳平安與寧姚大婚巡遊天下！
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part 3: The Grand Finale Explained in Depth -->
+      <div id="guide-grand-finale" style="background:var(--bg-card); border-radius:10px; padding:24px; border-left:5px solid var(--gold); margin-bottom:22px; box-shadow:0 4px 18px rgba(223,173,102,0.15);">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:14px;">
+          <div>
+            <span class="outcome-tag" style="background:var(--gold); color:#000; font-weight:bold;">讀者最想知道・終極結局揭秘</span>
+            <h3 style="color:var(--gold-light); margin:5px 0 0 0; font-size:21px;">🏆 三、終極大結局深度揭秘：小說最後到底怎麼了？結局是什麼？</h3>
+          </div>
+          <button class="btn btn-gold" onclick="openModal('modal-finale')" style="margin-top:6px;">🔍 彈窗全屏速讀大結局</button>
+        </div>
+        
+        <p style="font-size:15px; line-height:1.8; margin-bottom:16px;">
+          讀者在閱讀長篇巨著時最怕「看了半天不知道最後收場如何」。以下直接為您透徹剖析《劍來》小說第十五卷大結局與最新番外篇章的<strong>四大核心終局解答：</strong>
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          
+          <div style="background:var(--bg-block); padding:18px; border-radius:8px; border:1px solid var(--border);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+              <strong style="color:var(--gold); font-size:16px;">Q1：兩界大戰最後誰贏了？蠻荒妖族與遠古神靈下場如何？</strong>
+              <span class="outcome-tag outcome-win">浩然天下慘勝・阻斷天庭重臨</span>
+            </div>
+            <p style="font-size:14px; color:var(--ink-muted); margin:8px 0 0 0; line-height:1.75;">
+              <strong>【最終勝負】</strong>：蠻荒天下慘敗，浩然天下慘勝，人族徹底粉碎了神靈重回人間的企圖。<br/>
+              大驪國師<strong>崔瀺（繡虎）</strong>以自身性命入局，以整個寶瓶洲半壁江山為棋盤，反向算計死了蠻荒天下幕後領袖<strong>托月山大祖</strong>，硬生生阻斷了蠻荒天下吞併浩然的狂妄企圖。隨後幕後黑手<strong>周密</strong>妄圖攜帶群妖神明登天重建天庭重掌天道，但被陳平安、寧姚、左右、白也、鄭居中等人殺上天幕阻擊，神靈再無可能奴役人間，人妖兩族重定界線。
+            </p>
+          </div>
+
+          <div style="background:var(--bg-block); padding:18px; border-radius:8px; border:1px solid var(--border);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+              <strong style="color:var(--gold); font-size:16px;">Q2：「三教散道」到底是什麼意思？為什麼三位教祖要離開？</strong>
+              <span class="outcome-tag" style="background:var(--qi); color:#fff;">全書哲學頂點・人間靠自己</span>
+            </div>
+            <p style="font-size:14px; color:var(--ink-muted); margin:8px 0 0 0; line-height:1.75;">
+              <strong>【全書哲學頂峰】</strong>：這是烽火戲諸侯全書的最核心哲學收尾。<br/>
+              萬年以來，儒家至聖先師、道家老祖、佛家釋迦佛陀三位十四境巔峰霸主各自壓制一座天下。然而三教體制已經走向僵化，高層修士霸佔了天地間九成九的靈氣與氣運，神仙越來越強，凡人越來越如螻蟻。最終，三位祖師看到陳平安與年輕一輩已經走出「自立、講理、敢於擔當」的大道，<strong>三位祖師毅然選擇散道兵解，將一身億萬年修為與天下氣運徹底散入山川人間！</strong>從此世間再無至高無上的壓制，天地進入「人人靠自己、人人可成道」的全新萬民時代。
+            </p>
+          </div>
+
+          <div style="background:var(--bg-block); padding:18px; border-radius:8px; border:1px solid var(--border);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+              <strong style="color:var(--gold); font-size:16px;">Q3：主角陳平安最後達到了什麼境界？他成了什麼樣的人？</strong>
+              <span class="outcome-tag" style="background:var(--gold); color:#000;">十四境純粹劍仙・止境武神</span>
+            </div>
+            <p style="font-size:14px; color:var(--ink-muted); margin:8px 0 0 0; line-height:1.75;">
+              <strong>【陳平安的終極實力與身分】</strong>：<br/>
+              • <strong>仙道修為</strong>：十四境純粹劍仙，本命飛劍融煉日月山河，手握半座劍氣長城氣運。<br/>
+              • <strong>武道修為</strong>：止境歸真（第十一境極限武夫，肉身神仙難傷，千古第一純粹武夫）。<br/>
+              • <strong>身分</strong>：劍氣長城末代隱官、寶瓶洲落魄山開山宗主、桐葉洲青萍劍宗開山祖師、文聖一脈關門弟子、天下講道理的總把關人。<br/>
+              他沒有像遠古神明那樣高坐雲端冷眼看凡間，而是依然穿著青衫布鞋，行走在泥瓶巷與各座天下之間，守著身後的親友與人間煙火。
+            </p>
+          </div>
+
+          <div style="background:var(--bg-block); padding:18px; border-radius:8px; border:1px solid var(--border);">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+              <strong style="color:var(--gold); font-size:16px;">Q4：陳平安與寧姚最後在一起了嗎？感情結局如何？</strong>
+              <span class="outcome-tag" style="background:#e83e8c; color:#fff;">神仙眷侶・番外大婚圓滿</span>
+            </div>
+            <p style="font-size:14px; color:var(--ink-muted); margin:8px 0 0 0; line-height:1.75;">
+              <strong>【感情線圓滿結局】</strong>：原著正文與官方最新番外<strong>《新婚》</strong>正式給出了最圓滿的交代！<br/>
+              陳平安一生未改心意，獨愛寧姚一人。兩人在浩然天下落魄山與五彩天下飛升城舉辦了天下共慶的世紀大婚，所有同袍、弟子與好友（阿良、左右、崔東山、裴錢等）齊聚一堂。婚後寧姚執掌飛升城，陳平安執掌落魄山，夫妻二人攜手遨遊星海天下，育有子女，相伴長生不老。
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Part 4: Major Characters Final Fate -->
+      <div id="guide-who-lives-dies" style="background:var(--bg-card); border-radius:10px; padding:22px; border-left:5px solid var(--zhuan); margin-bottom:22px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
+          <h3 style="color:var(--zhuan); margin:0; font-size:20px;">👥 四、主要角色最終生死去向速覽（讀者最關心：誰活著？誰死了？）</h3>
+          <span style="font-size:13px; color:var(--ink-muted);">一表看懂全書宿命</span>
+        </div>
+        
+        <div class="table-responsive">
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <thead>
+              <tr style="background:var(--bg-block); color:var(--gold);">
+                <th style="padding:10px; border:1px solid var(--border); text-align:left; width:18%;">人物名稱</th>
+                <th style="padding:10px; border:1px solid var(--border); text-align:center; width:16%;">生死狀態</th>
+                <th style="padding:10px; border:1px solid var(--border); text-align:left;">最終去向與歷史評價</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:10px; border:1px solid var(--border); font-weight:bold; color:var(--gold);">崔瀺（繡虎）</td>
+                <td style="padding:10px; border:1px solid var(--border); text-align:center;"><span class="outcome-tag outcome-killed">壯烈犧牲</span></td>
+                <td style="padding:10px; border:1px solid var(--border); color:var(--ink-muted);">大驪國師，文聖首徒。以自身性命與寶瓶洲為棋局算死托月山大祖，為浩然天下續命萬年，千古第一國士。</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; border:1px solid var(--border); font-weight:bold; color:var(--gold);">陳清都（老大劍仙）</td>
+                <td style="padding:10px; border:1px solid var(--border); text-align:center;"><span class="outcome-tag outcome-killed">以身殉道</span></td>
+                <td style="padding:10px; border:1px solid var(--border); color:var(--ink-muted);">劍氣長城守護者。在蠻荒大決戰時斬出貫穿天地的一劍，以自身消散開闢五彩新天下，將未來託付給寧姚與陳平安。</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; border:1px solid var(--border); font-weight:bold; color:var(--gold);">寧姚</td>
+                <td style="padding:10px; border:1px solid var(--border); text-align:center;"><span class="outcome-tag outcome-win">存活・天下第一</span></td>
+                <td style="padding:10px; border:1px solid var(--border); color:var(--ink-muted);">五彩天下第一人，十四境巔峰純粹劍修，飛升城城主。與陳平安大婚，成為萬界最耀眼的神仙眷侶。</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; border:1px solid var(--border); font-weight:bold; color:var(--gold);">左右 & 阿良</td>
+                <td style="padding:10px; border:1px solid var(--border); text-align:center;"><span class="outcome-tag outcome-win">存活・人間無敵</span></td>
+                <td style="padding:10px; border:1px solid var(--border); color:var(--ink-muted);">左右劍道至高專斬十四境，護道小師弟陳平安；阿良打穿妖族十四王座後重遊人間，縱情聲色瀟灑不羈。</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; border:1px solid var(--border); font-weight:bold; color:var(--gold);">崔東山</td>
+                <td style="padding:10px; border:1px solid var(--border); text-align:center;"><span class="outcome-tag outcome-win">存活・宗主坐鎮</span></td>
+                <td style="padding:10px; border:1px solid var(--border); color:var(--ink-muted);">崔瀺之分身褪去戾氣，全心輔佐先生陳平安，擔任下宗青萍劍宗第一任宗主，算無遺策。</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; border:1px solid var(--border); font-weight:bold; color:var(--gold);">裴錢 & 曹晴朗</td>
+                <td style="padding:10px; border:1px solid var(--border); text-align:center;"><span class="outcome-tag outcome-win">存活・一代宗師</span></td>
+                <td style="padding:10px; border:1px solid var(--border); color:var(--ink-muted);">裴錢成長為「神仙難救」的武道止境大武神，威震天下；曹晴朗繼承文聖學脈，成為浩然文廟極具聲望的大儒。</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; border:1px solid var(--border); font-weight:bold; color:var(--gold);">顧璨</td>
+                <td style="padding:10px; border:1px solid var(--border); text-align:center;"><span class="outcome-tag" style="background:var(--border-accent); color:#fff;">存活・自立道途</span></td>
+                <td style="padding:10px; border:1px solid var(--border); color:var(--ink-muted);">走出書簡湖後拜入白帝城鄭居中門下，成為魔道與帝王道巨擘。與陳平安斬斷舊債、各自相忘於江湖。</td>
+              </tr>
+              <tr>
+                <td style="padding:10px; border:1px solid var(--border); font-weight:bold; color:var(--gold);">正陽山諸仇敵</td>
+                <td style="padding:10px; border:1px solid var(--border); text-align:center;"><span class="outcome-tag outcome-killed">全數覆滅 / 貶黜</span></td>
+                <td style="padding:10px; border:1px solid var(--border); color:var(--ink-muted);">搬山猿被陳平安當場打碎生機肉身，竹皇兵敗認輸，蘇高山遭清算，正陽山祖師堂被一劍砸成廢墟，百年舊怨徹底了結。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Part 5: Dual Reading Paths -->
+      <div id="guide-reading-path" style="background:var(--bg-card); border-radius:10px; padding:22px; border-left:5px solid var(--gold-dark);">
+        <h3 style="color:var(--gold-light); margin-top:0; font-size:20px;">🗺️ 五、讀者建議閱讀路徑（如何使用本書的85章？）</h3>
+        <p style="font-size:14px; color:var(--ink-muted); line-height:1.7;">
+          本書由85個精心整理的起承轉合故事章節構成。為確保最佳閱讀體驗，推薦以下兩種閱讀路徑：
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:16px; margin-top:12px;">
+          <div style="background:var(--bg-block); padding:16px; border-radius:8px; border:1px solid var(--qi);">
+            <div style="color:var(--qi); font-weight:bold; font-size:16px; margin-bottom:8px;">🚀 路徑 A：主線骨架快讀路線（約30分鐘）</div>
+            <div style="font-size:13px; color:var(--ink); line-height:1.7;">
+              適合想快速把握小說全貌與高潮的讀者：<br/>
+              1. 詳讀上方<strong>「大結局全景解密」</strong>與<strong>「人物生死去向」</strong>。<br/>
+              2. 閱讀 <strong>第1~15章</strong>（此15章為全書最精粹的核心骨架，涵蓋長城初見、藕花福地、書簡湖、隱官大戰、正陽山問劍與大結局）。<br/>
+              3. 直奔 <strong>第84~85章</strong> 閱讀番外《新婚》與官方2026最新《上升地》。
+            </div>
+            <a href="#c1" class="btn btn-gold" style="margin-top:12px; display:inline-block; font-size:13px;">從第1章主線精華開始 ➔</a>
+          </div>
+
+          <div style="background:var(--bg-block); padding:16px; border-radius:8px; border:1px solid var(--cheng);">
+            <div style="color:var(--cheng); font-weight:bold; font-size:16px; margin-bottom:8px;">📖 路徑 B：全本沉浸式原創小說導讀（約6.5小時）</div>
+            <div style="font-size:13px; color:var(--ink); line-height:1.7;">
+              適合想細細品味原著每一個起伏細節與戰鬥的讀者：<br/>
+              從 <strong>第1章</strong> 按照目錄一直閱讀到 <strong>第85章</strong>。<br/>
+              每一章均已按照<strong>「起（背景因果）、承（行動細節）、轉（戰鬥高潮）、合（生死下場）」</strong>嚴謹撰寫，保證每一場交鋒有因有果、每個人物有名有姓！
+            </div>
+            <a href="#c16" class="btn" style="margin-top:12px; display:inline-block; font-size:13px; border-color:var(--cheng); color:var(--cheng);">從第16章分卷細節開始 ➔</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
     </div>
 
     <!-- Section: Timeline -->
@@ -1200,6 +1480,11 @@
         <h2 class="chapter-title">第一章｜再次遠遊：一個少年為何非走不可</h2>
         <div class="chapter-quote">「有些事，明知道很難，甚至可能送命，但只要答應了別人，就得一步一步走過去。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段一：二次遠遊與長城初會</strong> ｜ <span style="color:var(--ink);">主線焦點：告別落魄山赴長城十年之約，與寧姚城頭重逢，立誓提劍來娶</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -1262,6 +1547,11 @@
         <span class="volume-tag">❖ 正文第四卷・劍氣沖霄篇 ❖</span>
         <h2 class="chapter-title">第二章｜第一次見劍氣長城：愛情與死亡同在</h2>
         <div class="chapter-quote">「天底下最好的姑娘，就在那座最險的城頭上。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段一：二次遠遊與長城初會</strong> ｜ <span style="color:var(--ink);">主線焦點：告別落魄山赴長城十年之約，與寧姚城頭重逢，立誓提劍來娶</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -1326,6 +1616,11 @@
         <h2 class="chapter-title">第三章｜藕花福地：在陌生江湖看見另一種人間</h2>
         <div class="chapter-quote">「人間苦難千千萬，但只要有人願意伸手拉一把，泥潭裡也能開出清淨蓮花。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段二：藕花福地風雲與同伴相隨</strong> ｜ <span style="color:var(--ink);">主線焦點：神魂跌入畫卷福地，摘星樓斬殺丁嬰，收養裴錢與四畫卷英靈</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -1388,6 +1683,11 @@
         <span class="volume-tag">❖ 正文第五卷至第六卷・薪火相傳篇 ❖</span>
         <h2 class="chapter-title">第四章｜裴錢：從求生的小騙子到開山大弟子</h2>
         <div class="chapter-quote">「我叫裴錢，賠錢的賠，賠錢的錢……但師父說，我是全天下最好的大弟子！」——裴錢</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段二：藕花福地風雲與同伴相隨</strong> ｜ <span style="color:var(--ink);">主線焦點：神魂跌入畫卷福地，摘星樓斬殺丁嬰，收養裴錢與四畫卷英靈</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -1452,6 +1752,11 @@
         <h2 class="chapter-title">第五章｜書簡湖：重逢顧璨，卻發現故人已變</h2>
         <div class="chapter-quote">「世間最大的痛苦，莫過於你歷經千難萬險找到了兒時的玩伴，卻發現他已變成了殘害人命的惡魔。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段三：書簡湖問心與心魔大劫</strong> ｜ <span style="color:var(--ink);">主線焦點：奔赴青峽島面對顧璨行惡，替死難者記帳超渡，金丹碎裂道心大成</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -1514,6 +1819,11 @@
         <span class="volume-tag">❖ 正文第六卷・書簡問心篇 ❖</span>
         <h2 class="chapter-title">第六章｜顧璨與道理：不殺他，不代表原諒一切</h2>
         <div class="chapter-quote">「我今天護你不死，是還泥瓶巷那碗飯；但那些被你害死的人，我陳平安一筆一筆替你還！」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段三：書簡湖問心與心魔大劫</strong> ｜ <span style="color:var(--ink);">主線焦點：奔赴青峽島面對顧璨行惡，替死難者記帳超渡，金丹碎裂道心大成</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -1578,6 +1888,11 @@
         <h2 class="chapter-title">第七章｜北俱蘆洲：把道理帶進真正的劍修江湖</h2>
         <div class="chapter-quote">「在一個只認拳頭的世界裡，講理不是示弱，而是打得贏你，才更要跟你講理。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段四：北俱蘆洲歷練與金身重鑄</strong> ｜ <span style="color:var(--ink);">主線焦點：純粹劍修天地砥礪體魄，平定鬼蜮谷陰潮，突破武夫第七境金身</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -1640,6 +1955,11 @@
         <span class="volume-tag">❖ 正文第七卷・劍氣沖霄篇 ❖</span>
         <h2 class="chapter-title">第八章｜重返劍氣長城：寧姚身邊終於有人並肩</h2>
         <div class="chapter-quote">「今天起，長城城頭上，我寧姚身邊有陳平安並肩！」——寧姚</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段五：重返長城與末代隱官</strong> ｜ <span style="color:var(--ink);">主線焦點：十年之約重返劍氣長城，臨危接任末代隱官，避暑行宮統籌禦妖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -1704,6 +2024,11 @@
         <h2 class="chapter-title">第九章｜末代隱官：陳平安開始替別人的生死做決定</h2>
         <div class="chapter-quote">「每一筆軍功背後，都是幾條人命；每一張軍令下去，都是兄弟們的骨灰。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段五：重返長城與末代隱官</strong> ｜ <span style="color:var(--ink);">主線焦點：十年之約重返劍氣長城，臨危接任末代隱官，避暑行宮統籌禦妖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -1766,6 +2091,11 @@
         <span class="volume-tag">❖ 正文第九卷・天傾五彩篇 ❖</span>
         <h2 class="chapter-title">第十章｜長城終局：陳清都的選擇與寧姚的去向</h2>
         <div class="chapter-quote">「老夫守城萬年，死亦當歸城；但孩子們該去新的天下，過不用流血的日子！」——陳清都</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段六：長城分天與五彩天下</strong> ｜ <span style="color:var(--ink);">主線焦點：老大劍仙陳清都以身殉道劈開天下，寧姚攜眾飛升開闢五彩天下</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -1830,6 +2160,11 @@
         <h2 class="chapter-title">第十一章｜獨守城頭：沒有掌聲的修行</h2>
         <div class="chapter-quote">「留下來不是逞英雄，而是我答應過這座城、答應過她，只要我不倒，城頭就還在。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段七：獨守城頭與肉身涅槃</strong> ｜ <span style="color:var(--ink);">主線焦點：孤身一人獨守殘破長城三年，戰勝千萬妖族與心魔，武道極限突破</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -1892,6 +2227,11 @@
         <span class="volume-tag">❖ 正文第十卷・山河為棋篇 ❖</span>
         <h2 class="chapter-title">第十二章｜崔瀺的布局：冷酷之人也可能在守護天下</h2>
         <div class="chapter-quote">「世人罵我崔瀺刻薄寡恩、欺師滅祖又如何？只要這座人間能活下去，我死後墮入十八層地獄亦甘之如飴！」——崔瀺</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段八：寶瓶保衛戰與繡虎死節</strong> ｜ <span style="color:var(--ink);">主線焦點：蠻荒主力侵入浩然，大驪國師崔瀺以身做局算死托月山大祖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -1956,6 +2296,11 @@
         <h2 class="chapter-title">第十三章｜回到落魄山：最珍貴的不是天下第一</h2>
         <div class="chapter-quote">「走了千山萬水，打碎了滿身骨頭，能回到這座山頭吃上一碗熱麵，才是神仙。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段九：問劍正陽山與快意恩仇</strong> ｜ <span style="color:var(--ink);">主線焦點：陳平安重返寶瓶洲單槍匹馬問劍正陽山，砸碎祖師堂斬殺搬山猿</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -2018,6 +2363,11 @@
         <span class="volume-tag">❖ 正文第十一卷・雙峰並峙篇 ❖</span>
         <h2 class="chapter-title">第十四章｜阿良與左右：兩種截然不同的劍仙</h2>
         <div class="chapter-quote">「出劍要直，做人要真；天塌下來，有師兄替你頂著！」——阿良與左右</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十：落魄山開宗立派</strong> ｜ <span style="color:var(--ink);">主線焦點：落魄山正式建立下五洲頂級宗門，裴錢武神威名震懾各方</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -2082,6 +2432,11 @@
         <h2 class="chapter-title">第十五章｜主要人物後續命運速查</h2>
         <div class="chapter-quote">「大浪淘沙，有人化作了城頭的一把土，有人走成了天地間的神仙。」——全書評述</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -2144,6 +2499,11 @@
         <span class="volume-tag">❖ 正文第四卷・倒懸南下篇 ❖</span>
         <h2 class="chapter-title">第16章｜遠遊的代價：為何不直接留在落魄山</h2>
         <div class="chapter-quote">「能打與能負責，是兩回事；境界再高，若護不住想護的人，長生又有何用。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段一：二次遠遊與長城初會</strong> ｜ <span style="color:var(--ink);">主線焦點：告別落魄山赴長城十年之約，與寧姚城頭重逢，立誓提劍來娶</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -2208,6 +2568,11 @@
         <h2 class="chapter-title">第17章｜倒懸山：兩座天下之間的門檻</h2>
         <div class="chapter-quote">「跨過倒懸山，身後是太平犬，身前是殺人劍。」——倒懸山老道人</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段一：二次遠遊與長城初會</strong> ｜ <span style="color:var(--ink);">主線焦點：告別落魄山赴長城十年之約，與寧姚城頭重逢，立誓提劍來娶</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -2270,6 +2635,11 @@
         <span class="volume-tag">❖ 正文第四卷・城頭相依篇 ❖</span>
         <h2 class="chapter-title">第18章｜寧姚的世界：不只是戀愛對象</h2>
         <div class="chapter-quote">「我不願做站在你身後被保護的弱者，我要做能與你並肩迎戰天下的道侶。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段一：二次遠遊與長城初會</strong> ｜ <span style="color:var(--ink);">主線焦點：告別落魄山赴長城十年之約，與寧姚城頭重逢，立誓提劍來娶</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -2334,6 +2704,11 @@
         <h2 class="chapter-title">第19章｜陳清都與老劍仙們：守城者的宿命</h2>
         <div class="chapter-quote">「長城萬年不倒，不是因為妖族不夠凶，而是因為有人把一生都釘死在這裡。」——董三更</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段一：二次遠遊與長城初會</strong> ｜ <span style="color:var(--ink);">主線焦點：告別落魄山赴長城十年之約，與寧姚城頭重逢，立誓提劍來娶</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -2396,6 +2771,11 @@
         <span class="volume-tag">❖ 正文第五卷・福地乾坤篇 ❖</span>
         <h2 class="chapter-title">第20章｜藕花福地的江湖與廟堂</h2>
         <div class="chapter-quote">「廟堂爭權，江湖奪命；凡夫渴求長生，殊不知仙人亦在泥潭之中。」——朱斂</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段二：藕花福地風雲與同伴相隨</strong> ｜ <span style="color:var(--ink);">主線焦點：神魂跌入畫卷福地，摘星樓斬殺丁嬰，收養裴錢與四畫卷英靈</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -2460,6 +2840,11 @@
         <h2 class="chapter-title">第21章｜朱斂：老廚子的另一面</h2>
         <div class="chapter-quote">「世人皆道我老廚子只會顛勺，卻不知我的菜刀，亦能切碎神仙金丹。」——朱斂</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段二：藕花福地風雲與同伴相隨</strong> ｜ <span style="color:var(--ink);">主線焦點：神魂跌入畫卷福地，摘星樓斬殺丁嬰，收養裴錢與四畫卷英靈</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -2522,6 +2907,11 @@
         <span class="volume-tag">❖ 正文第五卷・師徒情深篇 ❖</span>
         <h2 class="chapter-title">第22章｜裴錢最初的恐懼：被拋下</h2>
         <div class="chapter-quote">「只要不違背良心，天塌下來，師父都不會丟下你。」——陳平安對裴錢</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段二：藕花福地風雲與同伴相隨</strong> ｜ <span style="color:var(--ink);">主線焦點：神魂跌入畫卷福地，摘星樓斬殺丁嬰，收養裴錢與四畫卷英靈</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -2586,6 +2976,11 @@
         <h2 class="chapter-title">第23章｜裴錢的拳：天賦與克制</h2>
         <div class="chapter-quote">「拳意滔天是本事，收放由心才是道心；能殺人不算強，能不妄殺才是真英雄。」——崔誠</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段二：藕花福地風雲與同伴相隨</strong> ｜ <span style="color:var(--ink);">主線焦點：神魂跌入畫卷福地，摘星樓斬殺丁嬰，收養裴錢與四畫卷英靈</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -2648,6 +3043,11 @@
         <span class="volume-tag">❖ 正文第六卷・惡水泥潭篇 ❖</span>
         <h2 class="chapter-title">第24章｜書簡湖的秩序：為何惡會變成常態</h2>
         <div class="chapter-quote">「當整座世道都在獎勵惡行、懲罰善良時，個人的道德堅持才最顯珍貴。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段三：書簡湖問心與心魔大劫</strong> ｜ <span style="color:var(--ink);">主線焦點：奔赴青峽島面對顧璨行惡，替死難者記帳超渡，金丹碎裂道心大成</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -2712,6 +3112,11 @@
         <h2 class="chapter-title">第25章｜顧璨的辯解：保護母親是否能解釋一切</h2>
         <div class="chapter-quote">「你想保護至親沒有錯，但你不能踩著別人的屍骨去成全自己的孝心！」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段三：書簡湖問心與心魔大劫</strong> ｜ <span style="color:var(--ink);">主線焦點：奔赴青峽島面對顧璨行惡，替死難者記帳超渡，金丹碎裂道心大成</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -2774,6 +3179,11 @@
         <span class="volume-tag">❖ 正文第六卷・真龍因果篇 ❖</span>
         <h2 class="chapter-title">第26章｜小泥鰍：一份禮物的後果</h2>
         <div class="chapter-quote">「無知之善有時等同於大惡，修道若無規矩約束，機緣便會淪為殺人屠刀。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段三：書簡湖問心與心魔大劫</strong> ｜ <span style="color:var(--ink);">主線焦點：奔赴青峽島面對顧璨行惡，替死難者記帳超渡，金丹碎裂道心大成</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -2838,6 +3248,11 @@
         <h2 class="chapter-title">第27章｜書簡湖的亡者：誰替沒有名字的人討公道</h2>
         <div class="chapter-quote">「哪怕是世間最微不足道的螻蟻，只要受了冤屈，天地間也必須有人替他討回公道！」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段三：書簡湖問心與心魔大劫</strong> ｜ <span style="color:var(--ink);">主線焦點：奔赴青峽島面對顧璨行惡，替死難者記帳超渡，金丹碎裂道心大成</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -2900,6 +3315,11 @@
         <span class="volume-tag">❖ 正文第六卷・道心涅槃篇 ❖</span>
         <h2 class="chapter-title">第28章｜書簡湖之後：沒有立刻痊癒的道心</h2>
         <div class="chapter-quote">「道心碎了可以重塑，骨頭斷了可以再接；但做人的底線，一步都不能退。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段三：書簡湖問心與心魔大劫</strong> ｜ <span style="color:var(--ink);">主線焦點：奔赴青峽島面對顧璨行惡，替死難者記帳超渡，金丹碎裂道心大成</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -2964,6 +3384,11 @@
         <h2 class="chapter-title">第29章｜鄭居中與顧璨的新道路</h2>
         <div class="chapter-quote">「既然成不了陳平安那樣的聖人，我便在深淵裡做一尊能定天下規矩的魔皇！」——顧璨</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段三：書簡湖問心與心魔大劫</strong> ｜ <span style="color:var(--ink);">主線焦點：奔赴青峽島面對顧璨行惡，替死難者記帳超渡，金丹碎裂道心大成</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -3026,6 +3451,11 @@
         <span class="volume-tag">❖ 正文第七卷・北俱長風篇 ❖</span>
         <h2 class="chapter-title">第30章｜北俱蘆洲：劍修如何講理</h2>
         <div class="chapter-quote">「北俱蘆洲的劍很利，但我陳平安的拳頭和道理，比劍更硬！」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段四：北俱蘆洲歷練與金身重鑄</strong> ｜ <span style="color:var(--ink);">主線焦點：純粹劍修天地砥礪體魄，平定鬼蜮谷陰潮，突破武夫第七境金身</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -3090,6 +3520,11 @@
         <h2 class="chapter-title">第31章｜骸骨灘與鬼蜮谷：生死之間的秩序</h2>
         <div class="chapter-quote">「陰陽有別，生死有界；縱在修羅鬼蜮，規矩二字亦不可廢。」——披麻宗老祖</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段四：北俱蘆洲歷練與金身重鑄</strong> ｜ <span style="color:var(--ink);">主線焦點：純粹劍修天地砥礪體魄，平定鬼蜮谷陰潮，突破武夫第七境金身</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -3152,6 +3587,11 @@
         <span class="volume-tag">❖ 正文第七卷・太徽正道篇 ❖</span>
         <h2 class="chapter-title">第32章｜劉景龍：可以講理的劍仙</h2>
         <div class="chapter-quote">「出劍之前先講三次道理，三次之後若冥頑不靈，便莫怪我太徽劍宗劍下無情。」——劉景龍</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段四：北俱蘆洲歷練與金身重鑄</strong> ｜ <span style="color:var(--ink);">主線焦點：純粹劍修天地砥礪體魄，平定鬼蜮谷陰潮，突破武夫第七境金身</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -3216,6 +3656,11 @@
         <h2 class="chapter-title">第33章｜初一與十五：飛劍不等於無敵</h2>
         <div class="chapter-quote">「飛劍是兵器，更是心性的延伸；依賴法寶者，終被法寶所噬。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段四：北俱蘆洲歷練與金身重鑄</strong> ｜ <span style="color:var(--ink);">主線焦點：純粹劍修天地砥礪體魄，平定鬼蜮谷陰潮，突破武夫第七境金身</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -3278,6 +3723,11 @@
         <span class="volume-tag">❖ 正文第七卷・城頭晨昏篇 ❖</span>
         <h2 class="chapter-title">第34章｜重返長城：年輕劍修的日常</h2>
         <div class="chapter-quote">「白天出城拿命換大妖頭顱，晚上在酒鋪賒酒吹牛，這就是長城的日子。」——晏琢</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段五：重返長城與末代隱官</strong> ｜ <span style="color:var(--ink);">主線焦點：十年之約重返劍氣長城，臨危接任末代隱官，避暑行宮統籌禦妖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -3342,6 +3792,11 @@
         <h2 class="chapter-title">第35章｜寧姚與陳平安：並肩的意義</h2>
         <div class="chapter-quote">「天下再大，有你在身邊，便是安心之所。」——寧姚</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段五：重返長城與末代隱官</strong> ｜ <span style="color:var(--ink);">主線焦點：十年之約重返劍氣長城，臨危接任末代隱官，避暑行宮統籌禦妖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -3404,6 +3859,11 @@
         <span class="volume-tag">❖ 正文第八卷・蠻荒兵戈篇 ❖</span>
         <h2 class="chapter-title">第36章｜蠻荒天下：敵人不是沒有頭腦的妖獸</h2>
         <div class="chapter-quote">「尊重你的敵人，承認他們的智慧與冷酷，是活過這場大戰的唯一法門。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段五：重返長城與末代隱官</strong> ｜ <span style="color:var(--ink);">主線焦點：十年之約重返劍氣長城，臨危接任末代隱官，避暑行宮統籌禦妖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -3468,6 +3928,11 @@
         <h2 class="chapter-title">第37章｜蕭愻與隱官一脈的裂痕</h2>
         <div class="chapter-quote">「背叛長城之人，縱得王座尊位，亦不過是跪在暴力膝下的懦夫。」——陳平安批蕭愻</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段五：重返長城與末代隱官</strong> ｜ <span style="color:var(--ink);">主線焦點：十年之約重返劍氣長城，臨危接任末代隱官，避暑行宮統籌禦妖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -3530,6 +3995,11 @@
         <span class="volume-tag">❖ 正文第八卷・生死算籌篇 ❖</span>
         <h2 class="chapter-title">第38章｜隱官的帳本：一場戰爭怎麼算</h2>
         <div class="chapter-quote">「這本帳簿上記著的不是數字，而是千千萬萬劍修以命換來的長城骨氣。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段五：重返長城與末代隱官</strong> ｜ <span style="color:var(--ink);">主線焦點：十年之約重返劍氣長城，臨危接任末代隱官，避暑行宮統籌禦妖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -3594,6 +4064,11 @@
         <h2 class="chapter-title">第39章｜戰爭的難題：局部勝利不等於全局勝利</h2>
         <div class="chapter-quote">「一城一池的得失不足喜，我們要在註定慘烈的消耗中，為整個人間掙得一線生機。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段五：重返長城與末代隱官</strong> ｜ <span style="color:var(--ink);">主線焦點：十年之約重返劍氣長城，臨危接任末代隱官，避暑行宮統籌禦妖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -3656,6 +4131,11 @@
         <span class="volume-tag">❖ 正文第九卷・萬古一劍篇 ❖</span>
         <h2 class="chapter-title">第40章｜陳清都的抉擇：為傳承留下出口</h2>
         <div class="chapter-quote">「老夫這柄劍，守了萬年；今日斬斷長城，替後世劍修劈開一座新乾坤！」——陳清都</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段六：長城分天與五彩天下</strong> ｜ <span style="color:var(--ink);">主線焦點：老大劍仙陳清都以身殉道劈開天下，寧姚攜眾飛升開闢五彩天下</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -3720,6 +4200,11 @@
         <h2 class="chapter-title">第41章｜五彩天下：寧姚的新責任</h2>
         <div class="chapter-quote">「長城劍修，寧向直中取，不向曲中求；新天下亦要按我飛升城的規矩來！」——寧姚</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段六：長城分天與五彩天下</strong> ｜ <span style="color:var(--ink);">主線焦點：老大劍仙陳清都以身殉道劈開天下，寧姚攜眾飛升開闢五彩天下</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -3782,6 +4267,11 @@
         <span class="volume-tag">❖ 正文第九卷・殘垣孤勇篇 ❖</span>
         <h2 class="chapter-title">第42章｜城頭的孤獨：留下來不是逞英雄</h2>
         <div class="chapter-quote">「沒有援軍，沒有退路，城頭之上唯我一人一劍；但這座門，我替人間守住了。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段七：獨守城頭與肉身涅槃</strong> ｜ <span style="color:var(--ink);">主線焦點：孤身一人獨守殘破長城三年，戰勝千萬妖族與心魔，武道極限突破</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -3846,6 +4336,11 @@
         <h2 class="chapter-title">第43章｜城頭修行：力量之外還有心境</h2>
         <div class="chapter-quote">「千錘百鍊出深山，烈火焚身若等閒；心境若如金剛在，萬劫不磨證長生。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段七：獨守城頭與肉身涅槃</strong> ｜ <span style="color:var(--ink);">主線焦點：孤身一人獨守殘破長城三年，戰勝千萬妖族與心魔，武道極限突破</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -3908,6 +4403,11 @@
         <span class="volume-tag">❖ 正文第十卷・山河焦土篇 ❖</span>
         <h2 class="chapter-title">第44章｜浩然天下的戰火：長城之外沒有真正安全</h2>
         <div class="chapter-quote">「長城破，九洲傾；覆巢之下，浩然無一寸土地是世外桃源。」——太平山道人</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段八：寶瓶保衛戰與繡虎死節</strong> ｜ <span style="color:var(--ink);">主線焦點：蠻荒主力侵入浩然，大驪國師崔瀺以身做局算死托月山大祖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -3972,6 +4472,11 @@
         <h2 class="chapter-title">第45章｜崔瀺：制度與犧牲的冷酷計算</h2>
         <div class="chapter-quote">「天下皆謂我刻薄殘忍，我自提三尺青鋒，以天地為棋局，護得神州萬世香火。」——崔瀺</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段八：寶瓶保衛戰與繡虎死節</strong> ｜ <span style="color:var(--ink);">主線焦點：蠻荒主力侵入浩然，大驪國師崔瀺以身做局算死托月山大祖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -4034,6 +4539,11 @@
         <span class="volume-tag">❖ 正文第十卷・白衣狂仙篇 ❖</span>
         <h2 class="chapter-title">第46章｜崔東山：從試探者到山門一員</h2>
         <div class="chapter-quote">「我家先生是天下最好的先生，誰敢辱先生一句，我便碎其滿門道基！」——崔東山</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段九：問劍正陽山與快意恩仇</strong> ｜ <span style="color:var(--ink);">主線焦點：陳平安重返寶瓶洲單槍匹馬問劍正陽山，砸碎祖師堂斬殺搬山猿</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -4098,6 +4608,11 @@
         <h2 class="chapter-title">第47章｜回家：落魄山為什麼值得守護</h2>
         <div class="chapter-quote">「天下第一是別人的，山上的熱湯麵是自己的；家在，道心便在。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段九：問劍正陽山與快意恩仇</strong> ｜ <span style="color:var(--ink);">主線焦點：陳平安重返寶瓶洲單槍匹馬問劍正陽山，砸碎祖師堂斬殺搬山猿</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -4160,6 +4675,11 @@
         <span class="volume-tag">❖ 正文第十一卷・青萍立世篇 ❖</span>
         <h2 class="chapter-title">第48章｜青萍劍宗：山主不只要會出拳</h2>
         <div class="chapter-quote">「山主不只要會出拳殺人，更要讓跟著你的弟子吃得飽飯、挺直脊樑。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段九：問劍正陽山與快意恩仇</strong> ｜ <span style="color:var(--ink);">主線焦點：陳平安重返寶瓶洲單槍匹馬問劍正陽山，砸碎祖師堂斬殺搬山猿</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -4224,6 +4744,11 @@
         <h2 class="chapter-title">第49章｜阿良：瀟灑背後的戰場重量</h2>
         <div class="chapter-quote">「江湖有我阿良在，天塌下來老子先頂著；斷了一條胳膊，酒照喝，劍照拔！」——阿良</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段九：問劍正陽山與快意恩仇</strong> ｜ <span style="color:var(--ink);">主線焦點：陳平安重返寶瓶洲單槍匹馬問劍正陽山，砸碎祖師堂斬殺搬山猿</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -4286,6 +4811,11 @@
         <span class="volume-tag">❖ 正文第十一卷・至正之劍篇 ❖</span>
         <h2 class="chapter-title">第50章｜左右：劍術與文脈的另一條道路</h2>
         <div class="chapter-quote">「小師弟，出劍要直；人間的不平事，我們文聖門下替天下一劍劈平！」——左右</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段九：問劍正陽山與快意恩仇</strong> ｜ <span style="color:var(--ink);">主線焦點：陳平安重返寶瓶洲單槍匹馬問劍正陽山，砸碎祖師堂斬殺搬山猿</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -4350,6 +4880,11 @@
         <h2 class="chapter-title">第51章｜正陽山問劍：舊日恩怨的清算</h2>
         <div class="chapter-quote">「正陽山，當年驪珠洞天那筆血債，今日我劉羨陽與陳平安，如數討還！」——劉羨陽</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段九：問劍正陽山與快意恩仇</strong> ｜ <span style="color:var(--ink);">主線焦點：陳平安重返寶瓶洲單槍匹馬問劍正陽山，砸碎祖師堂斬殺搬山猿</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -4412,6 +4947,11 @@
         <span class="volume-tag">❖ 正文第十一卷・龍泉獨立篇 ❖</span>
         <h2 class="chapter-title">第52章｜劉羨陽：從小鎮少年到獨立劍修</h2>
         <div class="chapter-quote">「泥瓶巷裡的泥腿子，也能憑一柄佩劍，走出屬於自己的堂堂正道！」——劉羨陽</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段九：問劍正陽山與快意恩仇</strong> ｜ <span style="color:var(--ink);">主線焦點：陳平安重返寶瓶洲單槍匹馬問劍正陽山，砸碎祖師堂斬殺搬山猿</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -4476,6 +5016,11 @@
         <h2 class="chapter-title">第53章｜大驪與寶瓶洲守衛戰</h2>
         <div class="chapter-quote">「大驪宋氏鐵騎，寧戰死沙場，絕不後退一步；寶瓶洲寸土不讓！」——宋長鏡</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段八：寶瓶保衛戰與繡虎死節</strong> ｜ <span style="color:var(--ink);">主線焦點：蠻荒主力侵入浩然，大驪國師崔瀺以身做局算死托月山大祖</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -4538,6 +5083,11 @@
         <span class="volume-tag">❖ 正文第十二卷・再造山河篇 ❖</span>
         <h2 class="chapter-title">第54章｜桐葉洲的戰後重建</h2>
         <div class="chapter-quote">「毀滅一座洲域只需一場兵禍，重造一座人間卻需傾盡萬世慈悲。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十：落魄山開宗立派</strong> ｜ <span style="color:var(--ink);">主線焦點：落魄山正式建立下五洲頂級宗門，裴錢武神威名震懾各方</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -4602,6 +5152,11 @@
         <h2 class="chapter-title">第55章｜青萍劍宗：崔東山的另一個舞台</h2>
         <div class="chapter-quote">「桐葉洲廢墟又如何？我崔東山偏要在這焦土之上，開出一座震鑠古今的青萍劍宗！」——崔東山</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十：落魄山開宗立派</strong> ｜ <span style="color:var(--ink);">主線焦點：落魄山正式建立下五洲頂級宗門，裴錢武神威名震懾各方</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -4664,6 +5219,11 @@
         <span class="volume-tag">❖ 正文第十二卷・家業如山篇 ❖</span>
         <h2 class="chapter-title">第56章｜落魄山的家業：錢、地、人情與規矩</h2>
         <div class="chapter-quote">「錢要算得清，地要守得住，規矩要立得正；這才是落魄山的真底蘊。」——朱斂</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十：落魄山開宗立派</strong> ｜ <span style="color:var(--ink);">主線焦點：落魄山正式建立下五洲頂級宗門，裴錢武神威名震懾各方</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -4728,6 +5288,11 @@
         <h2 class="chapter-title">第57章｜裴錢遠遊：拳頭越重，越不能任性</h2>
         <div class="chapter-quote">「落魄山開山大弟子裴錢，替師父教天下人什麼是做人的規矩！」——裴錢</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十：落魄山開宗立派</strong> ｜ <span style="color:var(--ink);">主線焦點：落魄山正式建立下五洲頂級宗門，裴錢武神威名震懾各方</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -4790,6 +5355,11 @@
         <span class="volume-tag">❖ 正文第十二卷・純儒文膽篇 ❖</span>
         <h2 class="chapter-title">第58章｜曹晴朗與福地的另一種傳承</h2>
         <div class="chapter-quote">「讀書人當為天地立心、為生民立命；滿朝權貴安能動我浩然正氣？！」——曹晴朗</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十：落魄山開宗立派</strong> ｜ <span style="color:var(--ink);">主線焦點：落魄山正式建立下五洲頂級宗門，裴錢武神威名震懾各方</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -4854,6 +5424,11 @@
         <h2 class="chapter-title">第59章｜五彩天下：飛升城的建立與挑戰</h2>
         <div class="chapter-quote">「飛升城不是世家的私產，誰敢壞長城遺留下來的公道，白鹿神劍絕不姑息。」——寧姚</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段六：長城分天與五彩天下</strong> ｜ <span style="color:var(--ink);">主線焦點：老大劍仙陳清都以身殉道劈開天下，寧姚攜眾飛升開闢五彩天下</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -4916,6 +5491,11 @@
         <span class="volume-tag">❖ 正文第十三卷・殺力第一篇 ❖</span>
         <h2 class="chapter-title">第60章｜寧姚：從天才少女到天下頂尖劍修</h2>
         <div class="chapter-quote">「天下劍仙千萬，唯我寧姚一劍，可斬盡神魔，亦可守護一人。」——寧姚</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段六：長城分天與五彩天下</strong> ｜ <span style="color:var(--ink);">主線焦點：老大劍仙陳清都以身殉道劈開天下，寧姚攜眾飛升開闢五彩天下</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -4980,6 +5560,11 @@
         <h2 class="chapter-title">第61章｜陳平安的多重身分：武夫、劍修、讀書人</h2>
         <div class="chapter-quote">「武夫之拳衛蒼生，劍修之鋒除邪祟，讀書人之心立天地；三者合一，天下無敵。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十一：青萍劍宗與同袍重逢</strong> ｜ <span style="color:var(--ink);">主線焦點：桐葉洲開闢下宗青萍劍宗，崔東山坐鎮，舊友同袍陸續相聚</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -5042,6 +5627,11 @@
         <span class="volume-tag">❖ 正文第十三卷・天道枷鎖篇 ❖</span>
         <h2 class="chapter-title">第62章｜十四境與天下規則：力量的上限</h2>
         <div class="chapter-quote">「境界再高，亦不可凌駕於人間道德之上；十四境若作惡，照樣斬落凡塵！」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十一：青萍劍宗與同袍重逢</strong> ｜ <span style="color:var(--ink);">主線焦點：桐葉洲開闢下宗青萍劍宗，崔東山坐鎮，舊友同袍陸續相聚</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -5106,6 +5696,11 @@
         <h2 class="chapter-title">第63章｜禮聖與文廟：浩然天下如何維持秩序</h2>
         <div class="chapter-quote">「規矩不是禁錮眾生的鎖鏈，而是保護弱者免遭強權碾壓的最後盾牌。」——禮聖</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十一：青萍劍宗與同袍重逢</strong> ｜ <span style="color:var(--ink);">主線焦點：桐葉洲開闢下宗青萍劍宗，崔東山坐鎮，舊友同袍陸續相聚</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -5168,6 +5763,11 @@
         <span class="volume-tag">❖ 正文第十四卷・萬族共融篇 ❖</span>
         <h2 class="chapter-title">第64章｜白澤與蠻荒：敵對天下的複雜面貌</h2>
         <div class="chapter-quote">「兩座天下萬年血仇，終當以互敬和平而止；殺戮換不來文明，公道方得長存。」——白澤</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十一：青萍劍宗與同袍重逢</strong> ｜ <span style="color:var(--ink);">主線焦點：桐葉洲開闢下宗青萍劍宗，崔東山坐鎮，舊友同袍陸續相聚</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -5232,6 +5832,11 @@
         <h2 class="chapter-title">第65章｜托月山與戰後清算</h2>
         <div class="chapter-quote">「萬年托月山，今日化齏粉；正義雖遲，但絕不會缺席。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十一：青萍劍宗與同袍重逢</strong> ｜ <span style="color:var(--ink);">主線焦點：桐葉洲開闢下宗青萍劍宗，崔東山坐鎮，舊友同袍陸續相聚</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -5294,6 +5899,11 @@
         <span class="volume-tag">❖ 正文第十四卷・劍道雙壁篇 ❖</span>
         <h2 class="chapter-title">第66章｜阿良與左右：兩種極致劍修</h2>
         <div class="chapter-quote">「一個至柔似風入紅塵，一個至剛若鐵立天塹；文聖門下，天下無雙。」——文聖老秀才</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十一：青萍劍宗與同袍重逢</strong> ｜ <span style="color:var(--ink);">主線焦點：桐葉洲開闢下宗青萍劍宗，崔東山坐鎮，舊友同袍陸續相聚</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -5358,6 +5968,11 @@
         <h2 class="chapter-title">第67章｜鄭居中：為何後期不能忽略白帝城</h2>
         <div class="chapter-quote">「世人皆以為我鄭居中追求長生，殊不知我所求者，乃宇宙天機的終極解答。」——鄭居中</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十一：青萍劍宗與同袍重逢</strong> ｜ <span style="color:var(--ink);">主線焦點：桐葉洲開闢下宗青萍劍宗，崔東山坐鎮，舊友同袍陸續相聚</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -5420,6 +6035,11 @@
         <span class="volume-tag">❖ 正文第十四卷・深淵救贖篇 ❖</span>
         <h2 class="chapter-title">第68章｜顧璨的後半生：情分與責任並存</h2>
         <div class="chapter-quote">「喝了這碗酒，你依然是我弟弟；欠人間的債，我們一起還。」——陳平安對顧璨</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十一：青萍劍宗與同袍重逢</strong> ｜ <span style="color:var(--ink);">主線焦點：桐葉洲開闢下宗青萍劍宗，崔東山坐鎮，舊友同袍陸續相聚</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -5484,6 +6104,11 @@
         <h2 class="chapter-title">第69章｜小陌與落魄山的新成員</h2>
         <div class="chapter-quote">「公子要講道理，小陌便在旁聽著；若有人不講道理，小陌的黃竹劍便替公子出劍。」——小陌</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -5546,6 +6171,11 @@
         <span class="volume-tag">❖ 正文第十四卷・聖人之量篇 ❖</span>
         <h2 class="chapter-title">第70章｜問劍之外：陳平安如何處理舊帳</h2>
         <div class="chapter-quote">「真正的復仇不是殺盡仇人，而是讓規矩昭彰、讓犯錯者甘願承擔歷史代價。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -5610,6 +6240,11 @@
         <h2 class="chapter-title">第71章｜三教祖師與更大的天下觀</h2>
         <div class="chapter-quote">「道歸天地，靈還眾生；從今往後，人間由人間自己做主！」——三教祖師</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -5672,6 +6307,11 @@
         <span class="volume-tag">❖ 正文第十五卷・萬世大同篇 ❖</span>
         <h2 class="chapter-title">第72章｜正文後段：由戰爭轉向大道與秩序</h2>
         <div class="chapter-quote">「刀槍入庫，馬放南山；這座滿目瘡痍的人間，終於迎來了朗朗乾坤。」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -5736,6 +6376,11 @@
         <h2 class="chapter-title">第73章｜正文結尾與番外：如何區分</h2>
         <div class="chapter-quote">「正文負責扛起天地，番外負責守護煙火；這才是完整的劍來世界。」——讀者評述</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -5798,6 +6443,11 @@
         <span class="volume-tag">❖ 官方番外篇・世紀大婚篇 ❖</span>
         <h2 class="chapter-title">第74章｜番外篇：新婚與新的日常</h2>
         <div class="chapter-quote">「等了幾百年，打了幾百架，今天我陳平安，終於把全天下最好的姑娘娶回家了！」——陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -5862,6 +6512,11 @@
         <h2 class="chapter-title">第75章｜番外篇：隱官見隱官</h2>
         <div class="chapter-quote">「我們最大的區別在於：你為自己活成了怪物，而我為身後人活成了規矩。」——陳平安對蕭愻</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -5924,6 +6579,11 @@
         <span class="volume-tag">❖ 官方番外篇・天外遠瞻篇 ❖</span>
         <h2 class="chapter-title">第76章｜番外篇：鄭居中的建議</h2>
         <div class="chapter-quote">「人間太平之後，當向星空遠眺；文明的腳步，永遠不該止步於眼前的苟安。」——鄭居中</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -5988,6 +6648,11 @@
         <h2 class="chapter-title">第77章｜番外篇：從〈少年遊〉到〈上升地〉</h2>
         <div class="chapter-quote">「少年永遠在路上，長劍永遠在腰間；走，去看看天外更高處的人間！」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -6050,6 +6715,11 @@
         <span class="volume-tag">❖ 人物傳奇終卷・神仙道侶篇 ❖</span>
         <h2 class="chapter-title">第78章｜人物索引：陳平安與寧姚</h2>
         <div class="chapter-quote">「一個從小鎮走出的泥腿子，一個從長城走出的女劍仙，並肩走成了一部天下傳奇。」——全書評述</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -6114,6 +6784,11 @@
         <h2 class="chapter-title">第79章｜人物索引：裴錢、曹晴朗與落魄山眾人</h2>
         <div class="chapter-quote">「這座山頭最厲害的不是出了多少神仙，而是這裡的每一個人，都在認真做人。」——朱斂</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -6176,6 +6851,11 @@
         <span class="volume-tag">❖ 人物傳奇終卷・救贖傳奇篇 ❖</span>
         <h2 class="chapter-title">第80章｜人物索引：顧璨、崔瀺與崔東山</h2>
         <div class="chapter-quote">「在泥潭裡掙扎過，在深淵裡沉淪過；但只要心向光明，終能洗盡鉛華。」——全書評述</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -6240,6 +6920,11 @@
         <h2 class="chapter-title">第81章｜人物索引：陳清都、阿良與左右</h2>
         <div class="chapter-quote">「萬古長城留英靈，浪蕩遊俠天下敬，直劍一出乾坤正；人族脊樑，萬世不滅。」——天下修士</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -6302,6 +6987,11 @@
         <span class="volume-tag">❖ 全書終極大地圖・因果總結篇 ❖</span>
         <h2 class="chapter-title">第82章｜最終閱讀地圖：全書時空大版圖與因果總決算</h2>
         <div class="chapter-quote">「走過萬水千山，歷經無數生死；願人間千家萬戶，永遠炊煙嫋嫋、天下無魔。」——全書結語</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -6366,6 +7056,11 @@
         <h2 class="chapter-title">第83章｜藕花福地：丁嬰之戰的勝負與代價</h2>
         <div class="chapter-quote">「摘星樓上斬丁嬰，人間正道開生面；拳意通神破魔障，畫卷英靈隨我行。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段二：藕花福地風雲與同伴相隨</strong> ｜ <span style="color:var(--ink);">主線焦點：神魂跌入畫卷福地，摘星樓斬殺丁嬰，收養裴錢與四畫卷英靈</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -6429,6 +7124,11 @@
         <h2 class="chapter-title">第84章｜書簡湖之後：不是打贏顧璨就能解決的事</h2>
         <div class="chapter-quote">「一本帳簿記盡人間冤魂，一腔熱血撐起天地良心；問心之路，雖死無悔。」——陳平安</div>
       </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段三：書簡湖問心與心魔大劫</strong> ｜ <span style="color:var(--ink);">主線焦點：奔赴青峽島面對顧璨行惡，替死難者記帳超渡，金丹碎裂道心大成</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
+      </div>
 
       <!-- 起 -->
       <div class="narrative-block block-qi">
@@ -6491,6 +7191,11 @@
         <span class="volume-tag">❖ 終極加寫深度卷・正陽平天下篇 ❖</span>
         <h2 class="chapter-title">第85章｜問劍正陽山：從登山到袁真頁被除名</h2>
         <div class="chapter-quote">「正陽山上劍氣橫，舊債討盡意氣平；莫道少年長生斷，一劍挑穿天下驚！」——劉羨陽與陳平安</div>
+      </div>
+      <!-- Chapter Contextual Roadmap Banner -->
+      <div class="chapter-context-banner" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; background:linear-gradient(90deg, rgba(223,173,102,0.12) 0%, rgba(28,46,68,0.4) 100%); border-left:4px solid var(--gold); padding:9px 14px; border-radius:5px; font-size:13px; color:var(--ink-muted); margin-bottom:18px;">
+        <div>📍 <strong style="color:var(--gold);">階段十二：十四境大戰、三教散道大結局與番外</strong> ｜ <span style="color:var(--ink);">主線焦點：神魔天幕終戰，三教祖師散道還天於民，陳平安寧姚大婚與天外上升地</span></div>
+        <div style="font-size:12px;"><a href="#reader-guide" style="color:var(--qi); text-decoration:none; font-weight:bold; margin-right:8px;">📖 返回全景導讀</a> <a href="javascript:void(0)" onclick="openModal('modal-finale')" style="color:var(--gold); text-decoration:none; font-weight:bold;">🏆 大結局解密</a></div>
       </div>
 
       <!-- 起 -->
@@ -6558,8 +7263,55 @@
 <div class="floating-hub">
   <div class="float-btn" onclick="scrollToTop()" title="回到頂部">▲</div>
   <div class="float-btn" onclick="resumeReading()" title="繼續閱讀">📌</div>
+  <div class="float-btn" onclick="openModal('modal-finale')" title="終極大結局速覽" style="border-color:var(--gold); background:var(--gold); color:#000; font-weight:bold;">🏆</div>
   <div class="float-btn" onclick="openModal('modal-fate')" title="人物命運">👥</div>
   <div class="float-btn" onclick="openModal('modal-battles')" title="戰鬥勝負">⚔️</div>
+</div>
+
+
+<!-- MODAL: Grand Finale -->
+<div class="modal-overlay" id="modal-finale" onclick="closeModalOnBg(event, 'modal-finale')">
+  <div class="modal-content" style="max-width:850px;">
+    <button class="modal-close" onclick="closeModal('modal-finale')">×</button>
+    <div style="border-bottom:1px solid var(--border); padding-bottom:12px; margin-bottom:16px;">
+      <span class="outcome-tag" style="background:var(--gold); color:#000; font-weight:bold;">終極大結局揭秘</span>
+      <h3 style="color:var(--gold-light); margin:5px 0 0 0; font-size:22px;">🏆 《劍來》小說正文與番外終極大結局深度解密</h3>
+      <p style="color:var(--ink-muted); font-size:13px; margin:4px 0 0 0;">解答讀者最關心的結局疑問：兩界大戰誰贏？三教為何散道？陳平安最後境界與寧姚歸宿。</p>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="background:var(--bg-block); padding:16px; border-radius:8px; border-left:4px solid var(--cheng);">
+        <strong style="color:var(--gold); font-size:16px;">① 兩界大戰誰獲勝？</strong>
+        <p style="font-size:14px; color:var(--ink-muted); margin:6px 0 0 0; line-height:1.7;">
+          浩然天下慘勝，蠻荒天下大軍敗退。大驪國師崔瀺以一人之死換取整座浩然萬年太平，算死蠻荒托月山大祖。幕後黑手周密帶著神靈妖族登天重築天庭的圖謀，被陳平安、寧姚、左右、白也殺上天幕瓦解，世間重歸安寧。
+        </p>
+      </div>
+
+      <div style="background:var(--bg-block); padding:16px; border-radius:8px; border-left:4px solid var(--qi);">
+        <strong style="color:var(--gold); font-size:16px;">② 為什麼三教祖師要「散道」？</strong>
+        <p style="font-size:14px; color:var(--ink-muted); margin:6px 0 0 0; line-height:1.7;">
+          儒釋道三教萬年以來壟斷了九成九的天地氣運，修士高高在上如神，凡人受壓迫如草芥。三教祖師看到以陳平安為代表的新一代已經能夠承擔天地正義，自願「散道」歸還萬年修為與氣運於人間，自此天地再無神仙壓迫，人人皆可做自己的主人。
+        </p>
+      </div>
+
+      <div style="background:var(--bg-block); padding:16px; border-radius:8px; border-left:4px solid var(--gold);">
+        <strong style="color:var(--gold); font-size:16px;">③ 陳平安的最終實力與境界？</strong>
+        <p style="font-size:14px; color:var(--ink-muted); margin:6px 0 0 0; line-height:1.7;">
+          仙道修為達<strong>合道十四境純粹劍仙</strong>，武道修為達<strong>止境歸真境</strong>（武神肉身），千古第一仙武雙全天花板。身兼劍氣長城末代隱官、落魄山山主、青萍劍宗始祖、文聖一脈關門弟子。
+        </p>
+      </div>
+
+      <div style="background:var(--bg-block); padding:16px; border-radius:8px; border-left:4px solid #e83e8c;">
+        <strong style="color:var(--gold); font-size:16px;">④ 陳平安與寧姚的大婚結局？</strong>
+        <p style="font-size:14px; color:var(--ink-muted); margin:6px 0 0 0; line-height:1.7;">
+          官方正文與最新番外《新婚》正式明寫二人成婚大典，萬界同慶！寧姚為五彩天下第一純粹劍仙，與陳平安結為夫妻攜手遨遊星海天外，育有兒女，情比金堅相伴長生。
+        </p>
+      </div>
+    </div>
+    <div style="text-align:right; margin-top:16px;">
+      <a href="#reader-guide" class="btn btn-gold" onclick="closeModal('modal-finale')">前往詳細導讀章節 ➔</a>
+    </div>
+  </div>
 </div>
 
 <!-- MODAL: Character Fate -->
